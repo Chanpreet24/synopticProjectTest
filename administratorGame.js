@@ -34,7 +34,6 @@ function linkCategorytoDB (){
                 option += '<option value="' + categories[i] + '">' + categories[i] + "</option>"
             }
                 document.getElementById('quizFormControl').innerHTML = option
-                alert(categories)
          });
     }
 
@@ -52,7 +51,7 @@ db.allDocs({
        $("#quizTable tr").remove(); 
        quizName.forEach(element => {
         if(element.doc.quizName == quizCategoryName)
-           var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td><td>" + "<td>" + element.doc.correctanswer + "</td><td>" + "<button>Edit Question</button>" + "</td><td>" + "<button>Delete Question</button>" + "</td></tr>";
+           var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td><td>" + "<td>" + element.doc.correctanswer;
            $("#quizTable").append(row);
        });
       }).catch(function (err) {

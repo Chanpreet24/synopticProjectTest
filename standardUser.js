@@ -25,15 +25,14 @@ function linkCategorytoDB (){
             {
                 option += '<option value="' + categories[i] + '">' + categories[i] + "</option>"
             }
-                document.getElementById('quizFormControl').innerHTML = option
-                alert(categories)
+                document.getElementById('quizFormControlForStandardUsers').innerHTML = option
          });
     }
 
 
-    function getdetails(e){
+    function getdetailsForStandardUser(e){
         e.preventDefault();
-        var e = document.getElementById("quizFormControl");
+        var e = document.getElementById("quizFormControlForStandardUsers");
         var quizCategoryName = e.value;
         //alert(quizCategoryName);
     db.allDocs({
@@ -44,7 +43,7 @@ function linkCategorytoDB (){
            $("#quizTable tr").remove(); 
            quizName.forEach(element => {
             if(element.doc.quizName == quizCategoryName)
-               var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td><td>" + "<td>" + element.doc.correctanswer + "</td><td>" + "<button>Edit Question</button>" + "</td><td>" + "<button>Delete Question</button>" + "</td></tr>";
+               var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td><td>";
                $("#quizTable").append(row);
            });
           }).catch(function (err) {
@@ -52,7 +51,7 @@ function linkCategorytoDB (){
           });
     }
     
-    $('#quizFormControl').on('change', getdetails);
+    $('#quizFormControlForStandardUsers').on('change', getdetailsForStandardUser);
 
 
 
