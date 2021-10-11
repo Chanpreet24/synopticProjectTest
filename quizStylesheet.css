@@ -141,6 +141,13 @@ table th{
     margin-left: 45px;
 }
 
+#addQuizButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+}
+
 #addQuizHeader{
     display: flex;
     justify-content: center;
@@ -156,6 +163,7 @@ table th{
     width: 750px;
     margin-left: 30%;
 }
+
 
 
 
