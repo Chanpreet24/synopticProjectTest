@@ -15,6 +15,8 @@ document.querySelector('#Edit-quizButton').addEventListener('click', () => {
 });
 
 
+var option = "";
+
 function linkCategorytoDB (){
     var categories = [];
      db.allDocs({
