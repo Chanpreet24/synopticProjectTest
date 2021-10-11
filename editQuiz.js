@@ -49,6 +49,8 @@ function addQuestion(e){
         alert(JSON.stringify(res));
     }
   });
+
+  window.location.href = './editQuiz.html';
 //alert("add question button is clicked"); 
 }
 

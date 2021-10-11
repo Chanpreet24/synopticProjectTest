@@ -1,4 +1,3 @@
-
 function deletePlayer(e){
     e.preventDefault();
     var playerToBeDeleted = $('#deletePlayer').val();
@@ -74,7 +73,7 @@ function progressToQuizPage() {
             }
         });
 
-        window.location.href = './game.html';
+        window.location.href = './editPlayer.html';
     } else
     alert ("There is a validation error");
     
