@@ -193,6 +193,8 @@ table th{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    margin-left: 35%;
 }
 
 #dropDownHeader{
