@@ -34,16 +34,14 @@ function linkCategorytoDB (){
         e.preventDefault();
         var e = document.getElementById("quizFormControlForStandardUsers");
         var quizCategoryName = e.value;
-        //alert(quizCategoryName);
     db.allDocs({
             include_docs: true
           }).then(function (result) {
            var quizName = result.rows;
-           console.log(quizName);
-           $("#quizTable tr").remove(); 
+           $("#quizTable").find("tr:not(:first)").remove(); 
            quizName.forEach(element => {
             if(element.doc.quizName == quizCategoryName)
-               var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td><td>";
+               var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td>" + "<td>" + element.doc.answer1 + "</td>"+ "<td>" + element.doc.answer2 + "</td>"+ "<td>" + element.doc.answer3 + "</td>"+ "<td>" + element.doc.answer4 + "</td>";
                $("#quizTable").append(row);
            });
           }).catch(function (err) {
