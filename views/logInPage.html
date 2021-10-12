@@ -36,10 +36,25 @@
     <script src="../pouchdb.find.js"></script>
     <script>
         const db2 = new PouchDB('quizUser_Database');
+        db2.allDocs({
+        include_docs: true
+      }).then(function (result) {
+       var quizName = result.rows;
+       console.log(quizName);
+      }).catch(function (err) {
+        console.log(err);
+      });
         const db = new PouchDB('quizAdmin_Database');
+        const remoteDB = new PouchDB('http://quizapp:password@35.179.97.242:5984/quizusers');
         db2.createIndex({
         index: {fields: ['email', 'password']}
         });
+        db2.replicate.to(remoteDB).on('complete', function () {
+            alert('replication from quizuser_database to quizuser_database complete');
+        }).on('error', function (err) {
+            console.log(err);
+    });
+    
     </script>
     <script src="../administratorGame.js"></script>
     <script src="../quiz.js"></script>
