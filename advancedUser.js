@@ -43,7 +43,7 @@ function linkCategorytoDB (){
            $("#quizTable").find("tr:not(:first)").remove();
            quizName.forEach(element => {
             if(element.doc.quizName == quizCategoryName)
-            var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "</td>" + "<td>" + element.doc.correctanswer;
+            var row = "<tr><td>" + element.doc.quizName + "</td><td>" + element.doc.question + "<td>" + element.doc.answer1 + "</td>"+ "<td>" + element.doc.answer2 + "</td>"+ "<td>" + element.doc.answer3 + "</td>"+ "<td>" + element.doc.answer4 + "</td>" + "<td>" + element.doc.correctanswer;
                $("#quizTable").append(row);
            });
           }).catch(function (err) {
