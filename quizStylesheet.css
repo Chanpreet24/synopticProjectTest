@@ -107,32 +107,7 @@ quiz functionality */
     color: chocolate;
 }
 
-#header1{
-    color: chocolate;
-    margin-right: 200px;
-    margin-left: 25px;
-    text-align: center;
-    align-items: center;
-}
 
-#header2{
-    color: chocolate;
-}
-
-#quizTable {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-table th{
-    border: 1px solid chocolate;
-}
-
-#quizTable td{
-    border: 1px solid chocolate;
-}
 
 #addQuizTable{
     display: flex;
@@ -154,14 +129,77 @@ table th{
     align-items: center;
 }
 
+
+
+
+
+/* Below is the css for the quiz display pages, this css handles the drop down and the tables for each user level */
+
+
+#header1{
+    color: chocolate;
+    margin-right: 200px;
+    margin-left: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+#header2{
+    color: chocolate;
+}
+
+#header3{
+    color: chocolate;
+}
+
+#header4{
+    color: chocolate;
+}
+
+#header5{
+    color: chocolate;
+}
+
+#header6{
+    color: chocolate;
+}
+
+#header7{
+    color: chocolate;
+}
+
+#quizTable {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table th{
+    border: 1px solid chocolate;
+}
+
+#quizTable td{
+    border: 1px solid chocolate;
+}
+
+
 #quizFormControl{
-    width: 750px;
-    margin-left: 30%;
+    width: 500px;
+    margin-left: 35%;
 }
 
 #quizFormControlForStandardUsers{
-    width: 750px;
-    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dropDownHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: chocolate;
 }
 
 
