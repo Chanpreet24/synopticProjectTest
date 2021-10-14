@@ -50,7 +50,7 @@
         db2.createIndex({
         index: {fields: ['email', 'password']}
         });
-        db2.replicate.to(remoteDB).on('complete', function () {
+        db2.sync.to(remoteDB).on('complete', function () {
             alert('replication from quizuser_database to quizuser_database complete');
         }).on('error', function (err) {
             console.log(err);
