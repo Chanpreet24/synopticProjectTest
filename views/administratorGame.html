@@ -47,17 +47,9 @@
         const db2 = new PouchDB('quizUser_Database');
         const db = new PouchDB('quizAdmin_Database');
         const remoteDB = new PouchDB('https://quizuser:password@7d0c4a1f-52be-433f-9bd6-4c697507f4ed-bluemix.cloudantnosqldb.appdomain.cloud/quizuser_database');
-        db2.replicate.to(remoteDB).on('complete', function () {
-            //alert('replication from quizuser_database to quizuser_database complete');
-        }).on('error', function (err) {
-           // alert(JSON.stringify(err));
-    });
     </script>
     <script src="../editQuiz.js"></script>
     <script src="../administratorGame.js"></script>
-    <!-- <script src="../quizAdmin.js"></script> -->
-
-    <!-- https://7d0c4a1f-52be-433f-9bd6-4c697507f4ed-bluemix.cloudantnosqldb.appdomain.cloud/quizuser_database       this is the remote db endpoint
-    username: quizuser password: is password -->
+    
 </body>
 </html>

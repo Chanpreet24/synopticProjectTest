@@ -69,6 +69,12 @@
     <script>
         const db2 = new PouchDB('quizUser_Database');
         const db = new PouchDB('quizAdmin_Database');
+        const remoteDB = new PouchDB('http://quizuser:password@18.169.3.213:5984/quizuserdb');
+        db2.sync(remoteDB).on('complete', function () {
+            alert('replication from quizuser_database to quizuser_database complete');
+        }).on('error', function (err) {
+            console.log(err);
+    });
     </script>
     <script src="../editPlayer.js"></script>
 </body>
