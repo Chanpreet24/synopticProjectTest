@@ -55,7 +55,7 @@
         }).on('error', function (err) {
             console.log(err);
     });
-    db.replicate.to(remoteDBadmin).on('complete', function () {
+    db.sync(remoteDBadmin).on('complete', function () {
             alert('replication from quizadmin_database to quizadmin_database complete');
         }).on('error', function (err) {
             console.log(err);
