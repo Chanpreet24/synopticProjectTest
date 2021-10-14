@@ -46,7 +46,7 @@
       });
         const db = new PouchDB('quizAdmin_Database');
         const remoteDB = new PouchDB('http://quizuser:password@18.169.3.213:5984/quizuserdb');
-        const remoteDB2 = new PouchDB('http://quizuser:password@18.169.3.213:5984/quizadmindb');
+        const remoteDBadmin = new PouchDB('http://quizuser:password@18.169.3.213:5984/quizadmindb');
         db2.createIndex({
         index: {fields: ['email', 'password']}
         });
@@ -55,7 +55,7 @@
         }).on('error', function (err) {
             console.log(err);
     });
-    db.replicate.to(remoteDB).on('complete', function () {
+    db.replicate.to(remoteDBadmin).on('complete', function () {
             alert('replication from quizadmin_database to quizadmin_database complete');
         }).on('error', function (err) {
             console.log(err);
