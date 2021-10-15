@@ -1,7 +1,13 @@
+function hashPassword(password) {
+  var hash = sha256.create();
+  hash.update(password);
+  return hash.hex();
+}
+
 function logInToQuiz(e){
   e.preventDefault();
     var email = $('#formLogin-email').val();
-    var password = $('#formLogin-password').val();
+    var password = hashPassword($('#formLogin-password').val());
     db2.find({
         selector: {email, password}                        
          }).then(function(res){

@@ -1,3 +1,9 @@
+function hashPassword(password) {
+    var hash = sha256.create();
+    hash.update(password);
+    return hash.hex();
+}
+
 function deletePlayer(e){
     e.preventDefault();
     var playerToBeDeleted = $('#deletePlayer').val();
@@ -11,14 +17,13 @@ function deletePlayer(e){
     };
 }
 
-
 $('#deletePlayerBtn').on('click',deletePlayer);
+
 
 function checkEmail() {
     try{
         var p = $('#add-player-form-email').val();
         var newemailregexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        // var regularexpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (newemailregexp.test(p)){
             alert("Valid email");
             return true;
@@ -53,7 +58,7 @@ function progressToQuizPage() {
             _id: $('#add-player-form-email').val(),
             name: $('#add-player-form-name').val(),
             email: $('#add-player-form-email').val(),
-            password: $('#add-player-form-password').val(),
+            password: hashPassword($('#add-player-form-password').val()),
             role: $('#add-player-role').val()
         };
 
@@ -79,6 +84,7 @@ function progressToQuizPage() {
     
 
 }
+
 
 
 document.querySelector('#edit-back-button').addEventListener('click', () => {
