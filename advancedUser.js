@@ -53,9 +53,3 @@ function linkCategorytoDB (){
     
     $('#quizFormControl').on('change', getdetails);
 
-
-//I need to dynamically add the quizzes into this array from the quiz db, based on the quiz name stored in the db
-
-
-
-//On the click of the option, the questions and answers need to be displayed in a table
